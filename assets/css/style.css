@@ -1,3 +1,7 @@
 .bg_dark_blue {
     background-color: darkslateblue;
 }
+
+.container_button {
+    width: 650px;
+}
