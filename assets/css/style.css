@@ -2,6 +2,33 @@
     background-color: darkslateblue;
 }
 
-.container_button {
-    width: 650px;
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.filters {
+    width: 300px;
+    margin-top: 2rem;
+}
+
+.filters h2 {
+    margin-bottom: 10px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter label {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.filter input {
+    flex-grow: 1;
 }

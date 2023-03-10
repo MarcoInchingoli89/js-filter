@@ -16,9 +16,10 @@
     <h1 class="text-center text-danger mb-5">Photo Editor</h1>
     <div class="container-fluid
     d-flex justify-content-center align-items-center flex-column">
-        <h4>Upload an image</h4>
-        <div class="container_button d-flex justify-content-center">
+        <div id="container-button" class="d-flex justify-content-center">
             <button type="button" class="btn btn-light px-5 border border-dark" onclick="loadImage()">
+
+                <h4>Clicca per caricare un'immagine</h4>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="300" fill="currentColor"
                     class="bi bi-cloud-arrow-up-fill text-info" viewBox="0 0 16 16">
@@ -28,9 +29,42 @@
 
             </button>
         </div>
+        <div class="filters">
+            <h2>Seleziona un filtro:</h2>
+            <div class="filter">
+                <label for="blur-range">Blur:</label>
+                <input id="blur-range" type="range" min="0" max="10" step="0.1" value="0" oninput="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="brightness-range">Brightness:</label>
+                <input id="brightness-range" type="range" min="0" max="200" value="100" oninput="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="contrast-range">Contrast:</label>
+                <input id="contrast-range" type="range" min="0" max="200" value="100" oninput="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="saturation-range">Saturation:</label>
+                <input id="saturation-range" type="range" min="0" max="200" value="100" oninput="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="hue-range">Hue:</label>
+                <input id="hue-range" type="range" min="0" max="360" value="0" oninput="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="grayscale-checkbox">Grayscale:</label>
+                <input id="grayscale-checkbox" type="checkbox" onchange="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="sepia-checkbox">Sepia:</label>
+                <input id="sepia-checkbox" type="checkbox" onchange="applyFilters()">
+            </div>
+            <div class="filter">
+                <label for="invert-checkbox">Invert:</label>
+                <input id="invert-checkbox" type="checkbox" onchange="applyFilters()">
+            </div>
+        </div>
     </div>
-
-
 
 
 

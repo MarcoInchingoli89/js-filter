@@ -20,6 +20,41 @@ function loadImage() {
                 image.classList.add('img-fluid');
                 image.style.maxWidth = '100%';
                 image.style.maxHeight = '80vh'; // Regolala in base alle tue esigenze
+                image.id = 'image-preview'; // Imposta l'ID dell'elemento immagine
+
+                const brightnessRange = document.getElementById("brightness-range");
+                const contrastRange = document.getElementById("contrast-range");
+                const saturationRange = document.getElementById("saturation-range");
+                const blurRange = document.getElementById("blur-range");
+                const grayscaleCheckbox = document.getElementById("grayscale-checkbox");
+                const sepiaCheckbox = document.getElementById("sepia-checkbox");
+                const invertCheckbox = document.getElementById("invert-checkbox");
+                const hueRange = document.getElementById("hue-range");
+                const imagePreview = document.getElementById("image-preview");
+
+                brightnessRange.addEventListener("input", applyFilters);
+                contrastRange.addEventListener("input", applyFilters);
+                saturationRange.addEventListener("input", applyFilters);
+                blurRange.addEventListener("input", applyFilters);
+                grayscaleCheckbox.addEventListener("change", applyFilters);
+                sepiaCheckbox.addEventListener("change", applyFilters);
+                invertCheckbox.addEventListener("change", applyFilters);
+                hueRange.addEventListener("input", applyFilters);
+
+                function applyFilters() {
+                    console.log('Sto applicando')
+                    imagePreview.style.filter = `
+                    brightness(${brightnessRange.value}%)
+                    contrast(${contrastRange.value}%)
+                    saturate(${saturationRange.value}%)
+                    blur(${blurRange.value}px)
+                    grayscale(${grayscaleCheckbox.checked ? 1 : 0})
+                    sepia(${sepiaCheckbox.checked ? 1 : 0})
+                    invert(${invertCheckbox.checked ? 1 : 0})
+                    hue-rotate(${hueRange.value}deg)
+                  `;
+                }
+
             };
 
         };
@@ -27,3 +62,6 @@ function loadImage() {
 
     input.click();
 }
+
+
+
