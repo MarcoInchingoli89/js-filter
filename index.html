@@ -29,8 +29,8 @@
 
             </button>
         </div>
-        <div class="filters">
-            <h2>Seleziona un filtro:</h2>
+        <h2>Seleziona un filtro:</h2>
+        <div class="filters d-flex align-items-center justify-content-center">
             <div class="filter">
                 <label for="blur-range">Blur:</label>
                 <input id="blur-range" type="range" min="0" max="10" step="0.1" value="0" oninput="applyFilters()">
@@ -64,6 +64,8 @@
                 <input id="invert-checkbox" type="checkbox" onchange="applyFilters()">
             </div>
         </div>
+        <button class="btn btn-success rounded-3 my-3" onclick="resetFilters()" id="resetFiltersButton"
+            type="button">Resetta Filtri</button>
     </div>
 
 

@@ -63,5 +63,35 @@ function loadImage() {
     input.click();
 }
 
+function resetFilters() {
+
+    const brightnessRange = document.getElementById("brightness-range");
+    const contrastRange = document.getElementById("contrast-range");
+    const saturationRange = document.getElementById("saturation-range");
+    const blurRange = document.getElementById("blur-range");
+    const grayscaleCheckbox = document.getElementById("grayscale-checkbox");
+    const sepiaCheckbox = document.getElementById("sepia-checkbox");
+    const invertCheckbox = document.getElementById("invert-checkbox");
+    const hueRange = document.getElementById("hue-range");
+    const imagePreview = document.getElementById("image-preview");
+
+    // reimposta i valori dei filtri al loro stato predefinito
+    brightnessRange.value = 100;
+    contrastRange.value = 100;
+    saturationRange.value = 100;
+    blurRange.value = 0;
+    hueRange.value = 0;
+    grayscaleCheckbox.checked = false;
+    invertCheckbox.checked = false;
+    sepiaCheckbox.checked = false;
+
+    // reimposta l'immagine all'originale
+    imagePreview.style.filter = 'none';
+}
+
+const resetFiltersButton = document.getElementById('resetFiltersButton');
+resetFiltersButton.addEventListener('click', resetFilters);
+
+
 
 

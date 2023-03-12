@@ -11,24 +11,28 @@
 
 .filters {
     width: 300px;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
-.filters h2 {
-    margin-bottom: 10px;
+.container-fluid h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .filter {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
 }
 
 .filter label {
-    width: 100px;
-    margin-right: 10px;
+    text-align: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .filter input {
     flex-grow: 1;
+
 }
