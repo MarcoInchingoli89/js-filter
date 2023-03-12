@@ -31,6 +31,7 @@ function loadImage() {
                 const invertCheckbox = document.getElementById("invert-checkbox");
                 const hueRange = document.getElementById("hue-range");
                 const imagePreview = document.getElementById("image-preview");
+                const downloadButton = document.getElementById("download-button");
 
                 brightnessRange.addEventListener("input", applyFilters);
                 contrastRange.addEventListener("input", applyFilters);
@@ -40,6 +41,7 @@ function loadImage() {
                 sepiaCheckbox.addEventListener("change", applyFilters);
                 invertCheckbox.addEventListener("change", applyFilters);
                 hueRange.addEventListener("input", applyFilters);
+                downloadButton.addEventListener("click", downloadImage);
 
                 function applyFilters() {
                     console.log('Sto applicando')
@@ -53,6 +55,21 @@ function loadImage() {
                     invert(${invertCheckbox.checked ? 1 : 0})
                     hue-rotate(${hueRange.value}deg)
                   `;
+                }
+
+                function downloadImage() {
+                    console.log('Ho cliccato download')
+                    const canvas = document.createElement('canvas');
+                    const image = document.getElementById('image-preview');
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+                    const context = canvas.getContext('2d');
+                    context.filter = image.style.filter;
+                    context.drawImage(image, 0, 0, image.width, image.height);
+                    const link = document.createElement('a');
+                    link.download = 'immagine_modificata.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
                 }
 
             };
